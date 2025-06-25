@@ -5,6 +5,7 @@
   <title>Fluntern 66 - Funky Pachinko Zurich</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Fluntern 66: The wildest, weirdest Pachinko Parlour in Zurich. Come play, laugh, and maybe win a cheese wheel.">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -17,31 +18,17 @@
       animation: bgmove 20s linear infinite alternate;
     }
     @keyframes bgmove {
-      0% {
-        background-position: 0% 0%;
-      }
-      100% {
-        background-position: 100% 100%;
-      }
+      0% { background-position: 0% 0%; }
+      100% { background-position: 100% 100%; }
     }
     header {
       text-align: center;
-      padding: 3rem 1rem 1rem 1rem;
-      background: none;
+      padding: 2rem 1rem 1rem 1rem;
     }
-    .logo {
-      font-family: 'Bungee Shade', cursive;
-      font-size: 4rem;
-      color: #fff;
-      letter-spacing: 0.1em;
-      text-shadow: 0 4px 16px #333, 0 0px 30px #fff7b2;
-      margin-bottom: 0.25em;
-      position: relative;
-      animation: bounce 2s infinite alternate;
-    }
-    @keyframes bounce {
-      0% { transform: translateY(0);}
-      100% { transform: translateY(-18px);}
+    .logo img {
+      height: 120px;
+      margin-bottom: 0.5em;
+      filter: drop-shadow(0 4px 16px #333);
     }
     .subtitle {
       font-size: 1.5rem;
@@ -49,6 +36,11 @@
       font-weight: bold;
       text-shadow: 0 2px 8px #fff7b2;
       margin-bottom: 1em;
+    }
+    .cover-image {
+      width: 100%;
+      height: auto;
+      display: block;
     }
     nav {
       margin: 2rem 0 1rem 0;
@@ -66,7 +58,6 @@
       border-radius: 25px;
       box-shadow: 0 2px 7px #ffe06690;
       transition: background 0.2s, color 0.2s;
-      position: relative;
     }
     nav a:hover {
       background: #ff6f91;
@@ -118,7 +109,6 @@
       font-family: 'Bungee Shade', cursive;
       color: #333;
       letter-spacing: 0.05em;
-      position: relative;
       cursor: pointer;
       transition: box-shadow 0.3s;
     }
@@ -167,7 +157,6 @@
       opacity: 1;
       pointer-events: all;
     }
-    /* Easter Egg: 66 balls animation */
     .balls {
       position: fixed;
       left: 0; top: 0; width: 100vw; height: 100vh;
@@ -184,23 +173,24 @@
       animation: drop 7s linear infinite;
     }
     @keyframes drop {
-      0% { transform: translateY(-10vh);}
-      100% { transform: translateY(105vh);}
+      0% { transform: translateY(-10vh); }
+      100% { transform: translateY(105vh); }
     }
-    /* Responsive */
     @media (max-width: 600px) {
-      .main-content { padding: 1.2em 0.5em;}
-      .logo { font-size: 2.6rem;}
-      h2 { font-size: 1.2rem;}
-      nav a { margin: 0 0.3rem; font-size: 1.01rem;}
-      .pachinko-img { width: 125px;}
+      .main-content { padding: 1.2em 0.5em; }
+      .logo img { height: 80px; }
+      h2 { font-size: 1.2rem; }
+      nav a { margin: 0 0.3rem; font-size: 1.01rem; }
+      .pachinko-img { width: 125px; }
     }
   </style>
 </head>
 <body>
   <div class="balls" id="balls"></div>
   <header>
-    <div class="logo">Fluntern 66</div>
+    <div class="logo">
+      <img src="assets/logo.png" alt="Fluntern 66 Logo">
+    </div>
     <div class="subtitle">Zurich’s Funkadelic Pachinko Playground</div>
     <nav>
       <a href="#about">About</a>
@@ -208,6 +198,9 @@
       <a href="#findus">Find Us</a>
     </nav>
   </header>
+
+  <img src="assets/cover.png" alt="Fluntern 66 Cover Image" class="cover-image">
+
   <section class="main-content">
     <img
       src="https://cdn.pixabay.com/photo/2013/07/12/13/57/pinball-147438_1280.png"
@@ -223,6 +216,7 @@
       At <b>Fluntern 66</b>, the balls bounce, the lights dazzle, the music is groovy, and the prizes are... unpredictable. 
       Test your luck, your sense of rhythm, and maybe your sanity. Play for the thrill, stay for the cheese wheel raffle.
     </p>
+
     <h2 id="hours">Opening Times</h2>
     <div class="funny-hours" id="hoursBox" title="Click me for a secret!">
       <b>Mon:</b> 10:00 - 10:10 (We love short Mondays!)<br>
@@ -238,13 +232,15 @@
       Bring a rubber duck and say “Euler sent me” for a free game. <br>
       <span style="font-size:0.85em;color:#3ec9e6;">(Offer valid only during imaginary hours.)</span>
     </div>
+
     <h2 id="findus">Find Us</h2>
     <p class="about">
       <b>Address:</b> Zürichbergstrasse 66, 8044 Zürich, Switzerland<br>
-      <b>Tram/Bus:</b> 5,6, 33 (Hop off at Kirche Fluntern, follow the sound of bouncing balls.)<br>
+      <b>Tram/Bus:</b> 5, 6, 33 (Hop off at Kirche Fluntern, follow the sound of bouncing balls.)<br>
       <b>Email:</b> <a href="mailto:hello@fluntern66.ch" style="color:#ff6f91;text-decoration:underline;">hello@fluntern66.ch</a><br>
       <b>Instagram:</b> <a href="https://instagram.com/fluntern66" target="_blank" style="color:#3ec9e6;text-decoration:underline;">@fluntern66</a>
     </p>
+
     <button class="cta" id="ctaBtn">Roll the Dice!</button>
     <div class="egg" id="rollEgg" style="margin-top:0.7em;">
       🎲 <b>You rolled a...</b> <span id="diceResult"></span>
@@ -252,15 +248,16 @@
       If you get double sixes in real life, show us—prize awaits!
     </div>
   </section>
+
   <div class="footer">
     &copy; 2025 Fluntern 66. Designed with <span style="color:#ff6f91;">&#9829;</span> and <span style="color:#ffe066;">pachinko balls</span>.<br>
     <span style="font-size:0.88em;">Number of balls lost this week: <span id="ballsLost">?</span></span>
   </div>
+
   <script>
     // Easter Egg 1: Click on opening times
     document.getElementById('hoursBox').addEventListener('click', function() {
-      var eggMsg = document.getElementById('eggMsg');
-      eggMsg.classList.toggle('visible');
+      document.getElementById('eggMsg').classList.toggle('visible');
     });
 
     // Easter Egg 2: Pachinko image click
@@ -270,27 +267,29 @@
 
     // Easter Egg 3: Roll the dice button
     document.getElementById('ctaBtn').addEventListener('click', function() {
-      var roll = [1 + Math.floor(Math.random()*6), 1 + Math.floor(Math.random()*6)];
+      const roll = [1 + Math.floor(Math.random() * 6), 1 + Math.floor(Math.random() * 6)];
       document.getElementById('rollEgg').classList.add('visible');
       document.getElementById('diceResult').textContent = roll[0] + ' & ' + roll[1];
     });
 
     // Easter Egg 4: Balls lost counter
-    document.getElementById('ballsLost').textContent = 66 + Math.floor(Math.random()*66);
+    document.getElementById('ballsLost').textContent = 66 + Math.floor(Math.random() * 66);
 
-    // 66 animated balls
-    function randomBetween(a, b){ return a + Math.random() * (b - a); }
-    var balls = document.getElementById('balls');
-    for(let i=0;i<66;i++){
-      let ball = document.createElement('div');
+    // Animate 66 falling balls
+    function randomBetween(min, max) {
+      return min + Math.random() * (max - min);
+    }
+    const balls = document.getElementById('balls');
+    for (let i = 0; i < 66; i++) {
+      const ball = document.createElement('div');
       ball.className = 'ball';
       ball.style.left = randomBetween(2, 98) + 'vw';
       ball.style.top = (-randomBetween(0, 90)) + 'vh';
-      ball.style.animationDelay = (randomBetween(0,7)) + 's';
+      ball.style.animationDelay = (randomBetween(0, 7)) + 's';
       ball.style.background = [
         'radial-gradient(circle at 30% 30%, #ffe066, #ff6f91 75%, #3ec9e6 100%)',
         'radial-gradient(circle at 70% 70%, #3ec9e6, #ffe066 75%, #ff6f91 100%)'
-      ][i%2];
+      ][i % 2];
       balls.appendChild(ball);
     }
   </script>
